@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/utils/my_route.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -7,7 +8,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       color: Colors.white,
-      child: Center(
+      child: SingleChildScrollView(
         child: Column(
           children: <Widget>[
             Image.asset(
@@ -15,7 +16,7 @@ class LoginPage extends StatelessWidget {
               fit: BoxFit.cover,
             ),
             SizedBox(
-              height: 20,
+              height: 10,
             ),
             Text(
               "Programming",
@@ -44,15 +45,17 @@ class LoginPage extends StatelessWidget {
                       labelText: "Password",
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
                   ElevatedButton(
                     onPressed: () {
-                      print(" button work");
+                      Navigator.pushNamed(context, MyRoute.HomeRoute);
                     },
                     child: Text(
                       "Button",
                     ),
-                    style: TextButton.styleFrom(),
+                    style: TextButton.styleFrom(
+                      minimumSize: Size(120, 40),
+                    ),
                   ),
                 ],
               ),
